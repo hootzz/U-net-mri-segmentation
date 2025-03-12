@@ -7,6 +7,9 @@
 - **학습 환경**: Colab 무료 버전
 - **손실 함수**: BCEWithLogitsLoss
 
+  ![image](https://github.com/user-attachments/assets/55925c84-29a2-4e50-8de9-4a42c656bdf3)
+
+
 프로젝트 진행 중 손실 값이 -500까지 떨어지는 현상을 경험했고, 이를 해결하는 과정에서 많은 것을 배우며 문제점과 해결 방법, 그리고 개념을 학습하며 떠오른 질문들을 정리했습니다.
 
 ---
