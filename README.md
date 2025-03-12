@@ -210,7 +210,7 @@ MRI Segmentation (뇌 MRI 분할)
 - AdamW Optimizer의 튜닝  
 - TPU와 PyTorch/XLA 사용법  
   - xm.optimizer_step의 역할과 barrier의 의미  
-  - XLA 텐서 vs CPU 텐서의 호환성 및 변환 과정 (이게 자주 오류나 헷갈림 원인이 되니까 중요!)  
+  - XLA 텐서 vs CPU 텐서의 호환성 및 변환 과정
   - xm.mark_step의 중요성 (동기화 관리)
     
 ---
