@@ -191,35 +191,29 @@ MRI 영상 데이터의 특성과 U-Net 기반 세그멘테이션 모델의 한�
 ---
 # 다음으로 공부해 볼 영역
 
-MRI segmentation(뇌 MRI 분할)
-│
-├── 모델 구조
-│ ├── UNet variants (DeepUNet, Attention UNet)
-│ └─ 깊이와 skip connection이 어떻게 성능에 영향을 미치는지
-│
-├── Loss functions
-│ │
-│ ├── Dice Loss (세그멘테이션 특화)
-│ ├── IoU Loss (교집합 기반)
-│ ├── Tversky Loss (클래스 불균형 고려 특화)
-│
-├── 클래스 불균형 문제
-│ │
-│ ├── pos_weight 조정 실험
-│ └── Focal Loss (클래스 불균형 다룰 때 사용)
-│
-├── 학습 최적화 방법
-│ │
-│ ├── Learning Rate Scheduling (학습률 감소 전략)
-│ ├── AdamW Optimizer의 튜닝
-│
-├── TPU와 PyTorch/XLA 사용법
-│ │
-│ ├── xm.optimizer_step의 역할과 barrier의 의미
-│ ├── XLA 텐서 vs CPU 텐서의 호환성 및 변환 과정 (이게 자주 오류나 헷갈림 원인이 되니까 중요!)
-│ └── xm.mark_step의 중요성 (동기화 관리)
+MRI Segmentation (뇌 MRI 분할)
 
+### 모델 구조  
+- UNet variants (DeepUNet, Attention UNet)  
+- 깊이와 skip connection이 어떻게 성능에 영향을 미치는지  
+
+### Loss functions  
+- Dice Loss (세그멘테이션 특화)  
+- IoU Loss (교집합 기반)  
+- Tversky Loss (클래스 불균형 고려 특화)  
+- 클래스 불균형 문제  
+  - pos_weight 조정 실험  
+- Focal Loss (클래스 불균형 다룰 때 사용)  
+
+### 학습 최적화 방법  
+- Learning Rate Scheduling (학습률 감소 전략)  
+- AdamW Optimizer의 튜닝  
+- TPU와 PyTorch/XLA 사용법  
+  - xm.optimizer_step의 역할과 barrier의 의미  
+  - XLA 텐서 vs CPU 텐서의 호환성 및 변환 과정 (이게 자주 오류나 헷갈림 원인이 되니까 중요!)  
+  - xm.mark_step의 중요성 (동기화 관리)
+    
 ---
 
-이번 프로젝트를 통해 MRI 영상 데이터의 특성과 모델이 이를 어떻게 해석하는지를 공부할 수 있었습니다.
+이번 프로젝트를 통해 MRI 영상 데이터의 특성과 모델이 이를 어떻게 해석하는지에 대한 기초를 공부할 수 있었습니다.
 앞으로 보다 정밀한 의료 영상 분석 모델을 개발하기 위한 실험과 개선 방향을 추가적으로 검토해 보고 싶습니다.
