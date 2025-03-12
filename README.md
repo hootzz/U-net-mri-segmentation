@@ -153,7 +153,7 @@ U-Net의 한계 중 하나는 **경계선이 불명확할 때 성능이 저하�
 
 ---
 
-# **앞으로의 개선 방향**  
+# 앞으로의 개선 방향
 
 MRI 영상 데이터의 특성과 U-Net 기반 세그멘테이션 모델의 한계를 파악할 수 있었고, 
 
@@ -177,6 +177,47 @@ MRI 영상 데이터의 특성과 U-Net 기반 세그멘테이션 모델의 한�
 - **다양한 MRI 시퀀스(T1, T2, FLAIR) 조합 실험**을 통해, 최적의 데이터 구성 탐색  
 - **데이터 증강(Augmentation) 기법 적용**을 통해, 작은 종양 및 경계선 탐지 성능 향상 가능성 검토  
 - **노이즈 제거 기법(Denoising Autoencoder, GAN 기반 Super-Resolution 등) 적용 실험**을 통해 영상 품질 개선 가능성 분석  
+
+---
+
+# 추가적으로 고민해 볼 영역
+1. 데이터 증강(Augmentation)
+- 데이터 증강으로 일반화 성능 향상
+2. Attention U-Net
+- 특징을 강조하는 Attention 구조로 모델의 정확성을 높이기
+3. Metric 기반 평가
+- 추가 메트릭으로 성능 명확히 평가
+
+---
+# 다음으로 공부해 볼 영역
+
+MRI segmentation(뇌 MRI 분할)
+│
+├── 모델 구조
+│ ├── UNet variants (DeepUNet, Attention UNet)
+│ └─ 깊이와 skip connection이 어떻게 성능에 영향을 미치는지
+│
+├── Loss functions
+│ │
+│ ├── Dice Loss (세그멘테이션 특화)
+│ ├── IoU Loss (교집합 기반)
+│ ├── Tversky Loss (클래스 불균형 고려 특화)
+│
+├── 클래스 불균형 문제
+│ │
+│ ├── pos_weight 조정 실험
+│ └── Focal Loss (클래스 불균형 다룰 때 사용)
+│
+├── 학습 최적화 방법
+│ │
+│ ├── Learning Rate Scheduling (학습률 감소 전략)
+│ ├── AdamW Optimizer의 튜닝
+│
+├── TPU와 PyTorch/XLA 사용법
+│ │
+│ ├── xm.optimizer_step의 역할과 barrier의 의미
+│ ├── XLA 텐서 vs CPU 텐서의 호환성 및 변환 과정 (이게 자주 오류나 헷갈림 원인이 되니까 중요!)
+│ └── xm.mark_step의 중요성 (동기화 관리)
 
 ---
 
